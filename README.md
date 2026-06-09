@@ -18,11 +18,17 @@ The framework automatically generates common-centroid capacitor placements and r
 
 DAC_Layout_Generator/
 	ALIGN_func.py                   # Main entry point
+	
 	Cap_Layout_Generation.py        # Placement generation
+	
 	Global_detailed_routing_main.py # Global and detailed routing
+	
 	Layout_generator.py             # Layout generation utilities
+	
 	layers.json                     # Technology information
+	
 	test.json                       # Layout boundary definition
+	
 	DAC_general.png                 # Example output
 
 ## Requirements
