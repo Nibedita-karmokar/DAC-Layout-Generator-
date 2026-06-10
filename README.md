@@ -1,4 +1,3 @@
-
 # DAC Layout Generator
 
 ## Overview
@@ -7,8 +6,8 @@ DAC Layout Generator is a Python framework for automated placement and routing o
 
 This code implements the methodology presented in:
 
-N. Karmokar, A. K. Sharma, J. Poojary, M. Madhusudan, R. Harjani, and Sachin S. Sapatnekar,
-"Constructive Placement and Routing for Common-Centroid Capacitor Arrays in Binary-Weighted and Split DACs", IEEE TCAD, 2023.
+**N. Karmokar, A. K. Sharma, J. Poojary, M. Madhusudan, R. Harjani, and Sachin S. Sapatnekar,**
+*Constructive Placement and Routing for Common-Centroid Capacitor Arrays in Binary-Weighted and Split DACs*, IEEE TCAD, 2023.
 
 The framework automatically generates common-centroid capacitor placements and routing solutions while considering matching requirements and routing constraints.
 
@@ -16,35 +15,46 @@ The framework automatically generates common-centroid capacitor placements and r
 
 ## Repository Structure
 
+```text
 DAC_Layout_Generator/
-	ALIGN_func.py                   # Main entry point
-	
-	Cap_Layout_Generation.py        # Placement generation
-	
-	Global_detailed_routing_main.py # Global and detailed routing
-	
-	Layout_generator.py             # Layout generation utilities
-	
-	layers.json                     # Technology information
-	
-	test.json                       # Layout boundary definition
-	
-	DAC_general.png                 # Example output
+├── ALIGN_func.py                   # Main entry point
+├── Cap_Layout_Generation.py        # Placement generation
+├── Global_detailed_routing_main.py # Global and detailed routing
+├── Layout_generator.py             # Layout generation utilities
+├── layers.json                     # Technology information
+├── test.json                       # Layout boundary definition
+└── DAC_general.png                 # Example output
+```
+
+---
 
 ## Requirements
+
+```bash
 pip install numpy matplotlib
+```
+
+---
 
 ## Running the Tool
+
+```bash
 python ALIGN_func.py
+```
 
 Example input:
+
+```text
 1 2 4 8 16
+```
 
 where each number represents the weight of a capacitor group in the DAC.
 
+---
+
 ## Inputs
 
-1. Capacitor Weights
+### 1. Capacitor Weights
 
 Provided interactively when running the tool.
 
@@ -57,7 +67,7 @@ Enter a list element separated by space:
 
 These values represent the capacitor weights of the DAC and are internally converted into a unit-capacitor representation.
 
-2. Technology Description (`layers.json`)
+### 2. Technology Description (`layers.json`)
 
 Contains technology-specific routing information, including:
 
@@ -67,7 +77,7 @@ Contains technology-specific routing information, including:
 * Layer width and pitch
 * Resistance and capacitance parameters
 
-3. Layout Boundary (`test.json`)
+### 3. Layout Boundary (`test.json`)
 
 Defines the layout boundary used during placement and routing.
 
@@ -93,39 +103,41 @@ The flow consists of:
 
 The current implementation uses a spiral-based common-centroid placement strategy.
 
+---
+
 ## Outputs
 
 The framework generates:
 
-1. Placement Information
+### Placement Information
 
 * Unit-capacitor coordinates
 * Capacitor grouping information
 * Common-centroid placement structure
 
-2. Routing Information
+### Routing Information
 
 * Global routing assignments
 * Detailed routing tracks
 * Via locations
 
-3. Layout Objects
+### Layout Objects
 
 * Capacitor terminals
 * Wire segments
 * Routing geometries
 
-4. Visualization
+### Visualization
 
 * Generated capacitor-array layout
 * Routing topology visualization
-  
+
+---
 
 ## Citation
 
 If you use this code in academic work, please cite:
 
-N. Karmokar, A. K. Sharma, J. Poojary, M. Madhusudan, R. Harjani, and Sachin S. Sapatnekar,
-"Constructive Placement and Routing for Common-Centroid Capacitor Arrays in Binary-Weighted and Split DACs,"
-IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2023.
-
+```text
+N. Karmokar, A. K. Sharma, J. Poojary, M. Madhusudan, R. Harjani, and Sachin S. Sapatnekar, "Constructive Placement and Routing for Common-Centroid Capacitor Arrays in Binary-Weighted and Split DACs," IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2023.
+```
